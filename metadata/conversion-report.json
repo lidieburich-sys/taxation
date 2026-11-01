@@ -2759,9 +2759,48 @@
       "category": "主课",
       "pages": 36,
       "hidden_slides_included": 0,
-      "bytes": 5078692,
-      "sha256": "57b3dc0b50beb53ed0b6409e63c155be6475a070d4b74218c822049a6acd81ab",
+      "bytes": 5076440,
+      "sha256": "91a8070b110d5fd7775d1c4403abc1232eaeba62b943994262c840d47daa32d4",
       "minimum_text_retention": 0.0,
+      "source_sha256": "e175446b350e2502c02d51d3854e86a0117ace806ec035b433ab82e3d473e4af",
+      "compatibility_repairs": [
+        {
+          "slide_number": 7,
+          "shape_id": "6",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image14.png",
+          "image_sha256": "20cae2aa08ff4264116a9ae7393cffbfc53dc35b376a18947eaf3e7daf85b478",
+          "image_size": [
+            948,
+            377
+          ],
+          "frame_size_emu": [
+            6003290,
+            2380615
+          ],
+          "image_to_frame_aspect_ratio": 0.997165,
+          "replaced_cell_image_fills": 1,
+          "table_text_is_raster": true
+        },
+        {
+          "slide_number": 20,
+          "shape_id": "3",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image19.png",
+          "image_sha256": "9f19b56ac0a4223d6b30f4b9ff895509ed21959eb7923c7630e61b9d5b3593e6",
+          "image_size": [
+            1246,
+            452
+          ],
+          "frame_size_emu": [
+            7899400,
+            2856230
+          ],
+          "image_to_frame_aspect_ratio": 0.996733,
+          "replaced_cell_image_fills": 1,
+          "table_text_is_raster": true
+        }
+      ],
       "page_checks": [
         {
           "page": 1,
@@ -2801,9 +2840,9 @@
         },
         {
           "page": 7,
-          "text_retention": 0.4599,
+          "text_retention": 0.0695,
           "source_text_chars": 187,
-          "pdf_text_chars": 86
+          "pdf_text_chars": 13
         },
         {
           "page": 8,
@@ -2879,9 +2918,9 @@
         },
         {
           "page": 20,
-          "text_retention": 0.4186,
+          "text_retention": 0.0349,
           "source_text_chars": 258,
-          "pdf_text_chars": 108
+          "pdf_text_chars": 9
         },
         {
           "page": 21,
@@ -2987,9 +3026,30 @@
       "category": "主课",
       "pages": 32,
       "hidden_slides_included": 0,
-      "bytes": 5007384,
-      "sha256": "3887d4306fe527dd2227a392a30534f1ee4b1336c1d512ad19768e14bbff3129",
+      "bytes": 5006665,
+      "sha256": "1f2c914b97142c2971afc80f752442083c5df98f0f155155c648d54e173ac3b2",
       "minimum_text_retention": 0.0,
+      "source_sha256": "6f1646c15e7cdb9379f38ab0dc06ea4ac7f7359e0de5be97a8612d718f7aeca5",
+      "compatibility_repairs": [
+        {
+          "slide_number": 18,
+          "shape_id": "7",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image15.png",
+          "image_sha256": "0acacaddb3015efd84f352297b04cd0628beff75cb0576b164bef424fe1fcc0d",
+          "image_size": [
+            1048,
+            591
+          ],
+          "frame_size_emu": [
+            6636385,
+            3736340
+          ],
+          "image_to_frame_aspect_ratio": 0.998363,
+          "replaced_cell_image_fills": 4,
+          "table_text_is_raster": true
+        }
+      ],
       "page_checks": [
         {
           "page": 1,
@@ -3095,9 +3155,9 @@
         },
         {
           "page": 18,
-          "text_retention": 0.4217,
+          "text_retention": 0.0769,
           "source_text_chars": 351,
-          "pdf_text_chars": 148
+          "pdf_text_chars": 27
         },
         {
           "page": 19,
@@ -3929,9 +3989,30 @@
       "category": "主课",
       "pages": 24,
       "hidden_slides_included": 0,
-      "bytes": 5022920,
-      "sha256": "d083d67971be53c66ca17cf1011e538f11fca7a0f5e6af202d2a2fe2d201e32f",
+      "bytes": 5020484,
+      "sha256": "4431746bddbfd411012fad298d8db0313db679209f807686d994ec121fea7430",
       "minimum_text_retention": 0.0,
+      "source_sha256": "736a454c953b866e197bc4a642b0ace808b1d783eae42791d10ca751fb6d5acc",
+      "compatibility_repairs": [
+        {
+          "slide_number": 7,
+          "shape_id": "3",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image15.png",
+          "image_sha256": "f424b118d019378e504e3fd6234b932ef489fd9fafa612a7ea2288abc48919ee",
+          "image_size": [
+            1133,
+            602
+          ],
+          "frame_size_emu": [
+            7179945,
+            3810000
+          ],
+          "image_to_frame_aspect_ratio": 0.998705,
+          "replaced_cell_image_fills": 2,
+          "table_text_is_raster": true
+        }
+      ],
       "page_checks": [
         {
           "page": 1,
@@ -3971,9 +4052,9 @@
         },
         {
           "page": 7,
-          "text_retention": 0.4932,
+          "text_retention": 0.0672,
           "source_text_chars": 803,
-          "pdf_text_chars": 396
+          "pdf_text_chars": 54
         },
         {
           "page": 8,
@@ -5261,9 +5342,33 @@
       "category": "主课",
       "pages": 34,
       "hidden_slides_included": 0,
-      "bytes": 4992860,
-      "sha256": "1cd98c6ecc7ad9bb30485e0fc21eb46dde9078d1cfc316e9464779eba455b900",
+      "bytes": 4992917,
+      "sha256": "e4df482bd3e8bf6202f4c14eb8c2766889067e4e7ac3ca1fe9d8d6a68db83552",
       "minimum_text_retention": 0.0,
+      "source_sha256": "6a3b3c481722672738ab3625c03d6c80764fb4432e3fb1f1856931cfc4faabc1",
+      "compatibility_repairs": [
+        {
+          "repair": "corporation_rate_label_font_fit",
+          "source": "22-E4.pptx",
+          "source_sha256": "6a3b3c481722672738ab3625c03d6c80764fb4432e3fb1f1856931cfc4faabc1",
+          "source_sha256_verified": true,
+          "source_slide_sha256": "4da42a28d850d2d83f15791dfe5330cbd46b760c11e4b459a00cb3812ffb934f",
+          "repaired_sha256": "2d45696b56fffcb02883731628b4f7212ba42fe14ef7348d8bc011c768413905",
+          "repaired_slide_sha256": "be956185733e2107507965052fb5de5be52d0ef003ad947200b1fe6adaeee006",
+          "slide": 6,
+          "slide_part": "ppt/slides/slide6.xml",
+          "shape_id": 6,
+          "table_row": 2,
+          "table_column": 1,
+          "text": "Small profits rate（augmented profits≤lower limit）",
+          "old_font_pt": 18,
+          "new_font_pt": 17,
+          "updated_existing_font_properties": 7,
+          "paragraph_default_font_pt": 17,
+          "text_spacing_and_geometry_preserved": true,
+          "slide_number": 6
+        }
+      ],
       "page_checks": [
         {
           "page": 1,
@@ -7115,9 +7220,48 @@
       "category": "作业答案",
       "pages": 5,
       "hidden_slides_included": 0,
-      "bytes": 4998683,
-      "sha256": "99319c230b63e5486ec82800cd11b96984890d32d9e7cda4199556573c672225",
+      "bytes": 4994584,
+      "sha256": "db7c76c19178092424f322851db1461c9e8eee8b775ad6ae8e204e426f5372be",
       "minimum_text_retention": 0.0,
+      "source_sha256": "eeb15e66135b04068d53be410643d2fef866b719990b6d0bb81bca1db848b0d2",
+      "compatibility_repairs": [
+        {
+          "slide_number": 2,
+          "shape_id": "6",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image15.png",
+          "image_sha256": "46a5c37cc890d1a12bc02da24cf9c0c3ab4dedda3ac71f955aad8ee9df75f370",
+          "image_size": [
+            1696,
+            820
+          ],
+          "frame_size_emu": [
+            8064500,
+            3888105
+          ],
+          "image_to_frame_aspect_ratio": 0.997178,
+          "replaced_cell_image_fills": 3,
+          "table_text_is_raster": true
+        },
+        {
+          "slide_number": 3,
+          "shape_id": "3",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image16.png",
+          "image_sha256": "e437ec0b3676c8f0ad2f108f982acf03f8b0a5ee2779889f1c1162d7b930e58e",
+          "image_size": [
+            1666,
+            617
+          ],
+          "frame_size_emu": [
+            7920355,
+            2922270
+          ],
+          "image_to_frame_aspect_ratio": 0.996244,
+          "replaced_cell_image_fills": 2,
+          "table_text_is_raster": true
+        }
+      ],
       "page_checks": [
         {
           "page": 1,
@@ -7127,15 +7271,15 @@
         },
         {
           "page": 2,
-          "text_retention": 0.4613,
+          "text_retention": 0.0659,
           "source_text_chars": 349,
-          "pdf_text_chars": 161
+          "pdf_text_chars": 23
         },
         {
           "page": 3,
-          "text_retention": 0.5496,
+          "text_retention": 0.201,
           "source_text_chars": 413,
-          "pdf_text_chars": 227
+          "pdf_text_chars": 83
         },
         {
           "page": 4,
@@ -7241,9 +7385,84 @@
       "category": "作业答案",
       "pages": 7,
       "hidden_slides_included": 0,
-      "bytes": 4978042,
-      "sha256": "bc9ca0d5acc5aab5a1a85d1e6e4ed2554a3372a29048ee53509b835f640c2607",
+      "bytes": 4969239,
+      "sha256": "c2ff95375e869c4def81997fce29b2b3a1d20b354299f69f1cbd43ef5b76a47d",
       "minimum_text_retention": 0.0,
+      "source_sha256": "ffaf0f360e6f1f30bbd921d24426dfbb44648fef468e7b9fd89271c3d3c22840",
+      "compatibility_repairs": [
+        {
+          "slide_number": 2,
+          "shape_id": "6",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image16.png",
+          "image_sha256": "9634ffad706adb19238bb4223a23deaa36bd785a0ba979cfcbe3ee943b6af9c7",
+          "image_size": [
+            504,
+            163
+          ],
+          "frame_size_emu": [
+            6377940,
+            2045335
+          ],
+          "image_to_frame_aspect_ratio": 0.991578,
+          "replaced_cell_image_fills": 1,
+          "table_text_is_raster": true
+        },
+        {
+          "slide_number": 3,
+          "shape_id": "3",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image18.png",
+          "image_sha256": "c4cb71f8b3196a88b34034b0955ebb41b7fbfd82d86f946c0cf321b4a39ba3ee",
+          "image_size": [
+            417,
+            324
+          ],
+          "frame_size_emu": [
+            5275580,
+            4096385
+          ],
+          "image_to_frame_aspect_ratio": 0.999359,
+          "replaced_cell_image_fills": 1,
+          "table_text_is_raster": true
+        },
+        {
+          "slide_number": 5,
+          "shape_id": "3",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image20.png",
+          "image_sha256": "8d5212e52b96eb087e1562613ae5bc53d0413294a4536515eddeefc0c03d4100",
+          "image_size": [
+            602,
+            310
+          ],
+          "frame_size_emu": [
+            7632700,
+            3918585
+          ],
+          "image_to_frame_aspect_ratio": 0.996979,
+          "replaced_cell_image_fills": 1,
+          "table_text_is_raster": true
+        },
+        {
+          "slide_number": 6,
+          "shape_id": "6",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image22.png",
+          "image_sha256": "acb4274bcfd3fdb7df19dc5d72178b7b6a49bd06351546c43b5f009a9d06e7b8",
+          "image_size": [
+            461,
+            136
+          ],
+          "frame_size_emu": [
+            5832475,
+            1709420
+          ],
+          "image_to_frame_aspect_ratio": 0.993477,
+          "replaced_cell_image_fills": 1,
+          "table_text_is_raster": true
+        }
+      ],
       "page_checks": [
         {
           "page": 1,
@@ -7253,15 +7472,15 @@
         },
         {
           "page": 2,
-          "text_retention": 0.5407,
+          "text_retention": 0.1337,
           "source_text_chars": 172,
-          "pdf_text_chars": 93
+          "pdf_text_chars": 23
         },
         {
           "page": 3,
-          "text_retention": 0.5145,
+          "text_retention": 0.0477,
           "source_text_chars": 482,
-          "pdf_text_chars": 248
+          "pdf_text_chars": 23
         },
         {
           "page": 4,
@@ -7271,15 +7490,15 @@
         },
         {
           "page": 5,
-          "text_retention": 0.5177,
+          "text_retention": 0.0816,
           "source_text_chars": 282,
-          "pdf_text_chars": 146
+          "pdf_text_chars": 23
         },
         {
           "page": 6,
-          "text_retention": 0.5583,
+          "text_retention": 0.1917,
           "source_text_chars": 120,
-          "pdf_text_chars": 67
+          "pdf_text_chars": 23
         },
         {
           "page": 7,
@@ -7295,9 +7514,30 @@
       "category": "作业答案",
       "pages": 6,
       "hidden_slides_included": 0,
-      "bytes": 4940936,
-      "sha256": "400c18c049e777a92d07098e2c46b884a96550470c9df414937e9f418e077c0c",
+      "bytes": 4940573,
+      "sha256": "6cdf861f376ae49d7aedc7b85b81f527ad3e7b5b346059c24362e2a75cb270b1",
       "minimum_text_retention": 0.0,
+      "source_sha256": "d60d627697ae196049f39021923c60aed39e73e1226a299f168b5c365665292b",
+      "compatibility_repairs": [
+        {
+          "slide_number": 5,
+          "shape_id": "3",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image18.png",
+          "image_sha256": "9ff95079d83e0c71794eda07a7b1d8b159bf9e79662ae8e7332b53ed461f0d04",
+          "image_size": [
+            558,
+            115
+          ],
+          "frame_size_emu": [
+            7066280,
+            1440815
+          ],
+          "image_to_frame_aspect_ratio": 0.989359,
+          "replaced_cell_image_fills": 1,
+          "table_text_is_raster": true
+        }
+      ],
       "page_checks": [
         {
           "page": 1,
@@ -7325,9 +7565,9 @@
         },
         {
           "page": 5,
-          "text_retention": 0.5614,
+          "text_retention": 0.2018,
           "source_text_chars": 114,
-          "pdf_text_chars": 64
+          "pdf_text_chars": 23
         },
         {
           "page": 6,
@@ -7343,9 +7583,66 @@
       "category": "作业答案",
       "pages": 14,
       "hidden_slides_included": 0,
-      "bytes": 5049300,
-      "sha256": "00815d57871a3e837d652970f9f6f952a8a6b0e6adbe4dd3991f500fc55e9ee9",
+      "bytes": 5042046,
+      "sha256": "2729ec4dc862b9a7d68c84bd8f9d927cc36bad5ef6b92f8e5f236dfada36d993",
       "minimum_text_retention": 0.0,
+      "source_sha256": "27e829b0dd3fea449387ac007763d22d6ee244099ec64bc8eec7483345ecfd2b",
+      "compatibility_repairs": [
+        {
+          "slide_number": 2,
+          "shape_id": "6",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image16.png",
+          "image_sha256": "a247e3063081c20f7fece4aeb8c21d094357a81cb53eb8a611630238c218d36e",
+          "image_size": [
+            1468,
+            712
+          ],
+          "frame_size_emu": [
+            8924349,
+            4187825
+          ],
+          "image_to_frame_aspect_ratio": 0.967516,
+          "replaced_cell_image_fills": 1,
+          "table_text_is_raster": true
+        },
+        {
+          "slide_number": 3,
+          "shape_id": "3",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image18.png",
+          "image_sha256": "41504c0cb7e2eaebfce5531bfab367075d2d8f3ad0c83ea30645bf0e74de5da4",
+          "image_size": [
+            615,
+            214
+          ],
+          "frame_size_emu": [
+            5842635,
+            2023745
+          ],
+          "image_to_frame_aspect_ratio": 0.995425,
+          "replaced_cell_image_fills": 1,
+          "table_text_is_raster": true
+        },
+        {
+          "slide_number": 7,
+          "shape_id": "3",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image20.png",
+          "image_sha256": "26c0500561d37deae1c3e2035e5801f8e86c794a046865e813ccf3837b34f4b6",
+          "image_size": [
+            1197,
+            629
+          ],
+          "frame_size_emu": [
+            7272655,
+            3642360
+          ],
+          "image_to_frame_aspect_ratio": 0.953089,
+          "replaced_cell_image_fills": 1,
+          "table_text_is_raster": true
+        }
+      ],
       "page_checks": [
         {
           "page": 1,
@@ -7355,15 +7652,15 @@
         },
         {
           "page": 2,
-          "text_retention": 0.4856,
+          "text_retention": 0.0415,
           "source_text_chars": 554,
-          "pdf_text_chars": 269
+          "pdf_text_chars": 23
         },
         {
           "page": 3,
-          "text_retention": 0.4828,
+          "text_retention": 0.0991,
           "source_text_chars": 232,
-          "pdf_text_chars": 112
+          "pdf_text_chars": 23
         },
         {
           "page": 4,
@@ -7385,9 +7682,9 @@
         },
         {
           "page": 7,
-          "text_retention": 0.4986,
+          "text_retention": 0.0648,
           "source_text_chars": 355,
-          "pdf_text_chars": 177
+          "pdf_text_chars": 23
         },
         {
           "page": 8,
@@ -7607,9 +7904,48 @@
       "category": "作业答案",
       "pages": 8,
       "hidden_slides_included": 0,
-      "bytes": 5042157,
-      "sha256": "6f03844812e5987fcfc1a11b178a02f07be005d40c8f49849787c886a16acdaf",
+      "bytes": 5039449,
+      "sha256": "5ddd325a52af2168043eadfbdccad7af53f432b99c6a52868fcc675f8270cd13",
       "minimum_text_retention": 0.0,
+      "source_sha256": "6feaa317fc1296852fd7b7cd3299348ca56018332fe2c14551aa8d225ced4e6f",
+      "compatibility_repairs": [
+        {
+          "slide_number": 2,
+          "shape_id": "6",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image15.png",
+          "image_sha256": "2b7853709fd4c0be178e7ef510b363066c2184803748197fc34c693dd586887c",
+          "image_size": [
+            1291,
+            691
+          ],
+          "frame_size_emu": [
+            7848600,
+            3997754
+          ],
+          "image_to_frame_aspect_ratio": 0.951639,
+          "replaced_cell_image_fills": 1,
+          "table_text_is_raster": true
+        },
+        {
+          "slide_number": 6,
+          "shape_id": "3",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image16.png",
+          "image_sha256": "c0f49b492d776479a47dbc0cfd751e9e617e6094e7ce1f58bf0f012c73c2f4a7",
+          "image_size": [
+            1303,
+            724
+          ],
+          "frame_size_emu": [
+            7920355,
+            4307840
+          ],
+          "image_to_frame_aspect_ratio": 0.97886,
+          "replaced_cell_image_fills": 1,
+          "table_text_is_raster": true
+        }
+      ],
       "page_checks": [
         {
           "page": 1,
@@ -7619,9 +7955,9 @@
         },
         {
           "page": 2,
-          "text_retention": 0.492,
+          "text_retention": 0.0462,
           "source_text_chars": 498,
-          "pdf_text_chars": 245
+          "pdf_text_chars": 23
         },
         {
           "page": 3,
@@ -7643,9 +7979,9 @@
         },
         {
           "page": 6,
-          "text_retention": 0.4836,
+          "text_retention": 0.0327,
           "source_text_chars": 703,
-          "pdf_text_chars": 340
+          "pdf_text_chars": 23
         },
         {
           "page": 7,
@@ -7901,9 +8237,30 @@
       "category": "作业答案",
       "pages": 4,
       "hidden_slides_included": 0,
-      "bytes": 4933523,
-      "sha256": "88257e6f609747afd8e4f22e486af87394879d23c6498fe503c2ab146ed5c3ff",
+      "bytes": 4932291,
+      "sha256": "73ccdba3cd95ed4f65d03dccc8999aab32c4c80e4e9fece1becf50de07caecd2",
       "minimum_text_retention": 0.0,
+      "source_sha256": "6b8edbe5ffefda36721d50acba299bf85859513887fb68f8d36c1f7016174375",
+      "compatibility_repairs": [
+        {
+          "slide_number": 3,
+          "shape_id": "3",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image17.png",
+          "image_sha256": "1f2165dd8b620eccd364bb4d3fee4048c72ad9b87275f3998d18347c2998a6bb",
+          "image_size": [
+            602,
+            243
+          ],
+          "frame_size_emu": [
+            7632700,
+            3070860
+          ],
+          "image_to_frame_aspect_ratio": 0.996717,
+          "replaced_cell_image_fills": 1,
+          "table_text_is_raster": true
+        }
+      ],
       "page_checks": [
         {
           "page": 1,
@@ -7919,9 +8276,9 @@
         },
         {
           "page": 3,
-          "text_retention": 0.5154,
+          "text_retention": 0.1769,
           "source_text_chars": 130,
-          "pdf_text_chars": 67
+          "pdf_text_chars": 23
         },
         {
           "page": 4,
@@ -7937,9 +8294,30 @@
       "category": "作业答案",
       "pages": 9,
       "hidden_slides_included": 0,
-      "bytes": 4969913,
-      "sha256": "2a695bbb73261021af1622cb11fbe129b6b227d30949a0ca5292e70bfe2a3cb9",
+      "bytes": 4969341,
+      "sha256": "020766da5d7fc85919342d9033b109cb46248e591c23c6fa8985d215cb7d2538",
       "minimum_text_retention": 0.0,
+      "source_sha256": "c280a8114c7320f6454d3653ffe1a4d4597bdc0ea40f99e827d8a30c0cfc3851",
+      "compatibility_repairs": [
+        {
+          "slide_number": 4,
+          "shape_id": "4",
+          "reason": "Use verified original full-table PNG to avoid unsupported table-cell fallback fills",
+          "image_resource": "ppt/media/image17.png",
+          "image_sha256": "a4ed99ac9ce022bb445b7238dddf00a5b7f56504c24b6b90ece64cd10beeead9",
+          "image_size": [
+            1214,
+            477
+          ],
+          "frame_size_emu": [
+            7375515,
+            2719303
+          ],
+          "image_to_frame_aspect_ratio": 0.938352,
+          "replaced_cell_image_fills": 3,
+          "table_text_is_raster": true
+        }
+      ],
       "page_checks": [
         {
           "page": 1,
@@ -7961,9 +8339,9 @@
         },
         {
           "page": 4,
-          "text_retention": 0.4045,
+          "text_retention": 0.1045,
           "source_text_chars": 220,
-          "pdf_text_chars": 89
+          "pdf_text_chars": 23
         },
         {
           "page": 5,

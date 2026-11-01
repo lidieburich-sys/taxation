@@ -5342,30 +5342,51 @@
       "category": "主课",
       "pages": 34,
       "hidden_slides_included": 0,
-      "bytes": 4992917,
-      "sha256": "e4df482bd3e8bf6202f4c14eb8c2766889067e4e7ac3ca1fe9d8d6a68db83552",
+      "bytes": 4992842,
+      "sha256": "4e9b8b8e634d1fe1ff24a08493dd10cff3766e5aaa0d7c2ea456a5b28ac32b60",
       "minimum_text_retention": 0.0,
       "source_sha256": "6a3b3c481722672738ab3625c03d6c80764fb4432e3fb1f1856931cfc4faabc1",
       "compatibility_repairs": [
         {
-          "repair": "corporation_rate_label_font_fit",
+          "repair": "corporation_rate_table_column_fit",
           "source": "22-E4.pptx",
           "source_sha256": "6a3b3c481722672738ab3625c03d6c80764fb4432e3fb1f1856931cfc4faabc1",
           "source_sha256_verified": true,
           "source_slide_sha256": "4da42a28d850d2d83f15791dfe5330cbd46b760c11e4b459a00cb3812ffb934f",
-          "repaired_sha256": "2d45696b56fffcb02883731628b4f7212ba42fe14ef7348d8bc011c768413905",
-          "repaired_slide_sha256": "be956185733e2107507965052fb5de5be52d0ef003ad947200b1fe6adaeee006",
+          "repaired_sha256": "86afc3caa2b85968ca861cf858da2719582d114fd14d7d91b89d8e6c055e76a5",
+          "repaired_slide_sha256": "617b5b8fbf4821a603e785c32af8cf23b9424f58ba5deb2f71783ae4a52faeea",
           "slide": 6,
           "slide_part": "ppt/slides/slide6.xml",
           "shape_id": 6,
-          "table_row": 2,
-          "table_column": 1,
           "text": "Small profits rate（augmented profits≤lower limit）",
-          "old_font_pt": 18,
-          "new_font_pt": 17,
-          "updated_existing_font_properties": 7,
-          "paragraph_default_font_pt": 17,
-          "text_spacing_and_geometry_preserved": true,
+          "old_column_widths_emu": [
+            4751705,
+            1080135,
+            1047115,
+            1041400
+          ],
+          "new_column_widths_emu": [
+            5704205,
+            762635,
+            729615,
+            723900
+          ],
+          "column_width_deltas_emu": [
+            952500,
+            -317500,
+            -317500,
+            -317500
+          ],
+          "column_width_deltas_pt": [
+            75,
+            -25,
+            -25,
+            -25
+          ],
+          "updated_grid_width_properties": 4,
+          "total_table_width_emu": 7920355,
+          "original_font_pt": 18,
+          "text_fonts_spacing_bounds_and_row_heights_preserved": true,
           "slide_number": 6
         }
       ],

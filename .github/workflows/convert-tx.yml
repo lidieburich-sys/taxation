@@ -60,5 +60,6 @@ jobs:
           git add -- ':(top,glob)*.pdf' README.md metadata/conversion-report.json
           if ! git diff --cached --quiet; then
             git commit -m 'Add 50 TX PDFs and original exam tax table'
+            git pull --rebase origin main
             git push origin HEAD:main
           fi

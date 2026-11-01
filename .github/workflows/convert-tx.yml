@@ -2,6 +2,11 @@ name: Convert TX PowerPoint to PDF
 
 on:
   workflow_dispatch:
+    inputs:
+      repair_only:
+        description: Reuse verified PDFs unless a compatibility repair is needed
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -25,7 +30,7 @@ jobs:
           cp .github/scripts/fonts.conf ~/.config/fontconfig/conf.d/99-tx-fonts.conf
           fc-cache -f
           python3 -m venv /tmp/tx-venv
-          /tmp/tx-venv/bin/pip install 'PyMuPDF==1.26.7' Pillow
+          /tmp/tx-venv/bin/pip install 'PyMuPDF==1.26.7' Pillow lxml
       - name: Download source release
         env:
           GH_TOKEN: ${{ github.token }}
@@ -42,6 +47,8 @@ jobs:
           echo 'Source upload did not finish in time.' >&2
           exit 1
       - name: Convert and verify all decks
+        env:
+          REPAIR_ONLY: ${{ inputs.repair_only }}
         run: /tmp/tx-venv/bin/python .github/scripts/convert.py
       - name: Save visual checks
         if: always()

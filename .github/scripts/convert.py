@@ -1,9 +1,12 @@
 """Convert user-supplied TX decks on an ephemeral GitHub Actions runner."""
 from collections import Counter
+from concurrent.futures import ProcessPoolExecutor
+from multiprocessing import get_context
 from pathlib import Path
 from urllib.parse import quote
 import hashlib
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -14,6 +17,8 @@ import zipfile
 
 import fitz
 from PIL import Image, ImageDraw
+from repair_tables import repair_pptx
+from repair_rate_table import repair_rate_table
 
 ROOT = Path.cwd()
 WORK = Path(tempfile.mkdtemp(prefix="tx-conversion-"))
@@ -21,8 +26,9 @@ QA = ROOT / "qa"
 QA.mkdir(exist_ok=True)
 MANIFEST = json.loads((ROOT / "metadata/source-manifest.json").read_text())
 PREVIOUS_REPORT = ROOT / "metadata/conversion-report.json"
-PREVIOUS_HASHES = ({r["pdf"]: r["sha256"] for r in json.loads(PREVIOUS_REPORT.read_text())["files"]}
-                   if PREVIOUS_REPORT.exists() else {})
+PREVIOUS_RECORDS = ({r["pdf"]: r for r in json.loads(PREVIOUS_REPORT.read_text())["files"]}
+                    if PREVIOUS_REPORT.exists() else {})
+PREVIOUS_HASHES = {name: record["sha256"] for name, record in PREVIOUS_RECORDS.items()}
 ASSETS = {hashlib.sha256(p.read_bytes()).hexdigest(): p
           for p in (ROOT / "source-assets").iterdir() if p.is_file()}
 
@@ -50,6 +56,14 @@ def slide_texts(path):
 
 def convert(item):
     source, info, category = item
+    existing = ROOT / (source.stem + ".pdf")
+    if os.environ.get("REPAIR_ONLY", "").lower() == "true" and not info.get("repairs"):
+        if existing.name not in PREVIOUS_RECORDS or not existing.exists():
+            raise RuntimeError(f"No verified prior PDF to reuse: {existing.name}")
+        if hashlib.sha256(existing.read_bytes()).hexdigest() != PREVIOUS_HASHES[existing.name]:
+            raise RuntimeError(f"Existing PDF changed: {existing.name}")
+        print(f"Reuse verified PDF: {existing.name}", flush=True)
+        return PREVIOUS_RECORDS[existing.name]
     out = WORK / ("out-" + info["sha256"][:12])
     out.mkdir()
     profile = WORK / ("profile-" + info["sha256"][:12])
@@ -64,7 +78,7 @@ def convert(item):
     pdf = out / (source.stem + ".pdf")
     if result.returncode or not pdf.exists():
         raise RuntimeError(f"Conversion failed: {source.name}\n{result.stdout}\n{result.stderr}")
-    texts = slide_texts(source)
+    texts = info.get("original_slide_texts") or slide_texts(source)
     doc = fitz.open(pdf)
     if len(doc) != info["slide_count"] or len(doc) != len(texts):
         raise RuntimeError(f"Page count mismatch: {source.name}: {len(doc)} / {info['slide_count']}")
@@ -90,6 +104,10 @@ def convert(item):
             page = doc[check["page"] - 1]
             pix = page.get_pixmap(matrix=fitz.Matrix(1.5, 1.5), alpha=False)
             pix.save(QA / f"review-{key}-p{check['page']:03}.png")
+    for page_number in sorted({r["slide_number"] for r in info.get("repairs", [])}):
+        page = doc[page_number - 1]
+        pix = page.get_pixmap(matrix=fitz.Matrix(1.5, 1.5), alpha=False)
+        pix.save(QA / f"fixed-{key}-p{page_number:03}.png")
     doc.close()
     target = ROOT / pdf.name
     if target.exists() and hashlib.sha256(target.read_bytes()).hexdigest() != PREVIOUS_HASHES.get(target.name):
@@ -99,6 +117,7 @@ def convert(item):
               "pages": len(texts), "hidden_slides_included": info["hidden_slide_count"],
               "bytes": target.stat().st_size, "sha256": hashlib.sha256(target.read_bytes()).hexdigest(),
               "minimum_text_retention": min(p["text_retention"] for p in checks),
+              "source_sha256": info["sha256"], "compatibility_repairs": info.get("repairs", []),
               "page_checks": checks}
     print(json.dumps({k: record[k] for k in ["pdf", "pages", "minimum_text_retention"]}, ensure_ascii=False), flush=True)
     shutil.rmtree(profile, ignore_errors=True)
@@ -116,11 +135,22 @@ for archive in MANIFEST["archives"]:
             assert Path(info["filename"]).name == info["filename"]
             source = WORK / info["filename"]
             source.write_bytes(data)
+            fixed, layout_repairs = repair_rate_table(data, info["filename"])
+            fixed, table_repairs = repair_pptx(fixed, info["filename"])
+            info["repairs"] = table_repairs + layout_repairs
+            for repair in info["repairs"]:
+                repair["slide_number"] = repair.get("slide_number", repair.get("slide"))
+                if not isinstance(repair["slide_number"], int):
+                    raise ValueError("Repair record has no validated slide number")
+            if info["repairs"]:
+                info["original_slide_texts"] = slide_texts(source)
+                source.write_bytes(fixed)
             items.append((source, info, category))
 assert len(items) == MANIFEST["expected_pptx_count"]
-# PyMuPDF must not run from concurrent threads. Sequential conversions also keep
-# the runner's font cache and memory usage predictable.
-records = [convert(item) for item in items]
+# Ubuntu workers use separate processes, so PyMuPDF never shares a document or
+# interpreter across threads. Each LibreOffice conversion has its own profile.
+with ProcessPoolExecutor(max_workers=2, mp_context=get_context("fork")) as pool:
+    records = list(pool.map(convert, items))
 assert sum(r["pages"] for r in records) == MANIFEST["expected_slide_count"]
 tax = MANIFEST["tax_table"]
 shutil.copy2(ASSETS[tax["sha256"]], ROOT / tax["filename"])
@@ -159,6 +189,7 @@ rows += ["", "## 税率表", "", f"[{tax['filename']}]({quote(tax['filename'])})
          "## 原始资料与转换", "", "[原始 ZIP 与税率表](https://github.com/lidieburich-sys/taxation/releases/tag/tx-source-2026)", "",
          "PDF 由 GitHub Actions 在远端使用 LibreOffice 转换，保留原文件名及幻灯片顺序。原稿中的 1 张隐藏幻灯片也已导出；动画在 PDF 中显示为静态页面。", "",
          "远端字体替代可能造成少量字形和间距差异，原始 PPTX 保留在压缩包中。", "",
+         "含公式的表格使用原稿自带的完整备用图恢复显示，避免转换器裁剪错误；这部分内容可能不能直接搜索文字。另对一处过宽表格单元格作了轻微字号调整，正文不变。", "",
          "[来源清单](metadata/source-manifest.json) · [转换页数与文件校验记录](metadata/conversion-report.json)", ""]
 (ROOT / "README.md").write_text("\n".join(rows))
 shutil.rmtree(WORK)

@@ -31,8 +31,9 @@ def repair_rate_table(data: bytes, filename: str) -> tuple[bytes, list[dict]]:
 
     All other filenames pass through unchanged. A matching filename with a
     different source hash fails closed, including previously repaired input.
-    Only four grid-column widths change. All text, original 18 pt fonts, line
-    spacing, table bounds, row heights, and every other ZIP member are retained.
+    Only four grid-column widths and the two rate-label line spacings change.
+    All text, original 18 pt fonts, table bounds, row heights, paragraph anchors,
+    and every other ZIP member are retained.
     """
     if PurePosixPath(filename.replace("\\", "/")).name != SOURCE_FILENAME:
         return data, []
@@ -84,17 +85,32 @@ def repair_rate_table(data: bytes, filename: str) -> tuple[bytes, list[dict]]:
                       zip(old_widths, COLUMN_WIDTH_DELTAS)]
         if min(new_widths) <= 0 or sum(new_widths) != sum(old_widths):
             raise ValueError("Rate-table repair must preserve total table width")
+        line_spacings = frames[0].xpath(
+            ".//a:tbl/a:tr[position()=2 or position()=3]/a:tc[1]"
+            "/a:txBody/a:p/a:pPr/a:lnSpc/a:spcPct",
+            namespaces=NS,
+        )
+        if len(line_spacings) != 2 or any(
+            spacing.get("val") != "150000" for spacing in line_spacings
+        ):
+            raise ValueError("Expected two audited rate-label paragraphs at 150% line spacing")
         for column, width in zip(columns, new_widths):
             column.set("w", str(width))
+        for spacing in line_spacings:
+            spacing.set("val", "100000")
 
-        # Restore just the four widths and compare the entire canonical XML.
-        # This rejects any incidental change to text, fonts, spacing or bounds.
+        # Restore just four widths and two spacings, then compare the whole XML.
+        # This rejects incidental changes to text, fonts, anchors or geometry.
         for column, width in zip(columns, old_widths):
             column.set("w", str(width))
+        for spacing in line_spacings:
+            spacing.set("val", "150000")
         if etree.tostring(root, method="c14n") != etree.tostring(before, method="c14n"):
-            raise ValueError("Rate-table repair changed content outside its four column widths")
+            raise ValueError("Rate-table repair changed more than four widths and two line spacings")
         for column, width in zip(columns, new_widths):
             column.set("w", str(width))
+        for spacing in line_spacings:
+            spacing.set("val", "100000")
 
         repaired_xml = etree.tostring(root, encoding="UTF-8", xml_declaration=True,
                                       standalone=True)
@@ -109,7 +125,7 @@ def repair_rate_table(data: bytes, filename: str) -> tuple[bytes, list[dict]]:
 
     repaired = output.getvalue()
     return repaired, [{
-        "repair": "corporation_rate_table_column_fit",
+        "repair": "corporation_rate_table_column_and_line_spacing_fit",
         "source": filename,
         "source_sha256": source_hash,
         "source_sha256_verified": True,
@@ -125,7 +141,13 @@ def repair_rate_table(data: bytes, filename: str) -> tuple[bytes, list[dict]]:
         "column_width_deltas_emu": COLUMN_WIDTH_DELTAS,
         "column_width_deltas_pt": [75, -25, -25, -25],
         "updated_grid_width_properties": 4,
+        "line_spacing_changes": [
+            {"table_row": row, "table_column": 1,
+             "old_percent": 150, "new_percent": 100}
+            for row in (2, 3)
+        ],
+        "updated_line_spacing_properties": 2,
         "total_table_width_emu": sum(new_widths),
         "original_font_pt": 18,
-        "text_fonts_spacing_bounds_and_row_heights_preserved": True,
+        "text_fonts_anchors_bounds_and_row_heights_preserved": True,
     }]

@@ -25,7 +25,7 @@ jobs:
           cp .github/scripts/fonts.conf ~/.config/fontconfig/conf.d/99-tx-fonts.conf
           fc-cache -f
           python3 -m venv /tmp/tx-venv
-          /tmp/tx-venv/bin/pip install PyMuPDF Pillow
+          /tmp/tx-venv/bin/pip install 'PyMuPDF==1.26.7' Pillow
       - name: Download source release
         env:
           GH_TOKEN: ${{ github.token }}

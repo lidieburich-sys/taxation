@@ -5342,19 +5342,19 @@
       "category": "主课",
       "pages": 34,
       "hidden_slides_included": 0,
-      "bytes": 4992842,
-      "sha256": "4e9b8b8e634d1fe1ff24a08493dd10cff3766e5aaa0d7c2ea456a5b28ac32b60",
+      "bytes": 4992843,
+      "sha256": "a64a8eb684f04132210bb8515806797a2e24b1cf76eb585ecb363457d9ba6dd1",
       "minimum_text_retention": 0.0,
       "source_sha256": "6a3b3c481722672738ab3625c03d6c80764fb4432e3fb1f1856931cfc4faabc1",
       "compatibility_repairs": [
         {
-          "repair": "corporation_rate_table_column_fit",
+          "repair": "corporation_rate_table_column_and_line_spacing_fit",
           "source": "22-E4.pptx",
           "source_sha256": "6a3b3c481722672738ab3625c03d6c80764fb4432e3fb1f1856931cfc4faabc1",
           "source_sha256_verified": true,
           "source_slide_sha256": "4da42a28d850d2d83f15791dfe5330cbd46b760c11e4b459a00cb3812ffb934f",
-          "repaired_sha256": "86afc3caa2b85968ca861cf858da2719582d114fd14d7d91b89d8e6c055e76a5",
-          "repaired_slide_sha256": "617b5b8fbf4821a603e785c32af8cf23b9424f58ba5deb2f71783ae4a52faeea",
+          "repaired_sha256": "9a48770b4f3ae59954d6146e3f1d53ccbebd71f84d031978b497d7a6034dc4f9",
+          "repaired_slide_sha256": "b46980476673778b46f5b1cf0d5df7b67d4d7fa8854cc46eb4490628b3d20a9d",
           "slide": 6,
           "slide_part": "ppt/slides/slide6.xml",
           "shape_id": 6,
@@ -5384,9 +5384,24 @@
             -25
           ],
           "updated_grid_width_properties": 4,
+          "line_spacing_changes": [
+            {
+              "table_row": 2,
+              "table_column": 1,
+              "old_percent": 150,
+              "new_percent": 100
+            },
+            {
+              "table_row": 3,
+              "table_column": 1,
+              "old_percent": 150,
+              "new_percent": 100
+            }
+          ],
+          "updated_line_spacing_properties": 2,
           "total_table_width_emu": 7920355,
           "original_font_pt": 18,
-          "text_fonts_spacing_bounds_and_row_heights_preserved": true,
+          "text_fonts_anchors_bounds_and_row_heights_preserved": true,
           "slide_number": 6
         }
       ],

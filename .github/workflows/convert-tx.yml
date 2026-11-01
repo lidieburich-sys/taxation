@@ -7,6 +7,10 @@ on:
         description: Reuse verified PDFs unless a compatibility repair is needed
         type: boolean
         default: false
+      target_deck:
+        description: Optional original PPTX filename to refresh in repair-only mode
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -49,6 +53,7 @@ jobs:
       - name: Convert and verify all decks
         env:
           REPAIR_ONLY: ${{ inputs.repair_only }}
+          TARGET_DECK: ${{ inputs.target_deck }}
         run: /tmp/tx-venv/bin/python .github/scripts/convert.py
       - name: Save visual checks
         if: always()

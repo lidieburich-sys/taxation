@@ -193,7 +193,7 @@ rows += ["", "## 税率表", "", f"[{tax['filename']}]({quote(tax['filename'])})
          "## 原始资料与转换", "", "[原始 ZIP 与税率表](https://github.com/lidieburich-sys/taxation/releases/tag/tx-source-2026)", "",
          "PDF 由 GitHub Actions 在远端使用 LibreOffice 转换，保留原文件名及幻灯片顺序。原稿中的 1 张隐藏幻灯片也已导出；动画在 PDF 中显示为静态页面。", "",
          "远端字体替代可能造成少量字形和间距差异，原始 PPTX 保留在压缩包中。", "",
-         "含公式的表格使用原稿自带的完整备用图恢复显示，避免转换器裁剪错误；这部分内容可能不能直接搜索文字。另调整了一处表格的列宽以避免文字重叠，正文不变。", "",
+         "含公式的表格使用原稿自带的完整备用图恢复显示，避免转换器裁剪错误；这部分内容可能不能直接搜索文字。另调整了一处表格的列宽和行距以避免文字重叠，正文不变。", "",
          "[来源清单](metadata/source-manifest.json) · [转换页数与文件校验记录](metadata/conversion-report.json)", ""]
 (ROOT / "README.md").write_text("\n".join(rows))
 shutil.rmtree(WORK)

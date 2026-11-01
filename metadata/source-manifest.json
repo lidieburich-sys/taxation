@@ -1,0 +1,404 @@
+{
+  "source_release": "tx-source-2026",
+  "expected_pptx_count": 50,
+  "expected_slide_count": 1232,
+  "archives": [
+    {
+      "filename": "TX-Sdanvi 主课PPT-Ⅰ-66298.zip",
+      "size_bytes": 73744779,
+      "sha256": "a7ba72aa48bd3a9fc3a12d95ca13bfb32cb08aa0f185248d8950af8769ef8a9d",
+      "pptx_files": [
+        {
+          "filename": "1-introduction.pptx",
+          "size_bytes": 5269044,
+          "sha256": "1335b2bd3d5d0ed8a1287872a2d3124024a75c871062f5000cea2657f0824d88",
+          "slide_count": 12,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "2-A1-A3.pptx",
+          "size_bytes": 7092632,
+          "sha256": "8899949e2fef366d30c2321012bf9b1af195f7d1371091066c8a5fdd58514a5b",
+          "slide_count": 26,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "3-B1 B4(f)-(h) B5.pptx",
+          "size_bytes": 14160334,
+          "sha256": "3ed31f7a2b83d83a71db73807f59b6cbba5c2d196fac141bf678be045b829ad6",
+          "slide_count": 64,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "4-B2(a)-(e).pptx",
+          "size_bytes": 7588025,
+          "sha256": "c7cb248f53b513740774cff884880fbb23fb2d96eb7d8706e84cb449069cb3cb",
+          "slide_count": 24,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "5-B2(f)-(h).pptx",
+          "size_bytes": 14169247,
+          "sha256": "d056a02ce749f88fe459c94ec3da74ee6cd9248145a8d6f7d0c0655d179f7f12",
+          "slide_count": 58,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "6-B4(a)-(e).pptx",
+          "size_bytes": 10937328,
+          "sha256": "cd84e7f236010160c3db78951090bfd02c567cdc737ae9ad075dd4f23161d485",
+          "slide_count": 51,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "7-B7.pptx",
+          "size_bytes": 10958344,
+          "sha256": "7cb4da2f8024a92ad92f5cfed73f0c59aa448d660f99371aa7856e1983361cd3",
+          "slide_count": 35,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "8-B3(a)-(d).pptx",
+          "size_bytes": 7265154,
+          "sha256": "8cc605b9209a39486922b9888650159eebaff71f32e9cc4853d74eb1eef1b849",
+          "slide_count": 47,
+          "hidden_slide_count": 0
+        }
+      ]
+    },
+    {
+      "filename": "TX-Sdanvi 主课PPT-Ⅱ-66299.zip",
+      "size_bytes": 75422571,
+      "sha256": "179d2cb0d8ae400ab0570ffdc3371d320827ca6f60b53c1973729d1c10800039",
+      "pptx_files": [
+        {
+          "filename": "10-B3(f).pptx",
+          "size_bytes": 11727906,
+          "sha256": "05b3e9b647174180e98c1956d2d8fb6c23e22bc24826225f7fb02d761c4a50a0",
+          "slide_count": 39,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "11-B3(g).pptx",
+          "size_bytes": 7088402,
+          "sha256": "fcede0649af3e9949c2b8e9fb44d645c37483137810903b4a817433064c485b0",
+          "slide_count": 24,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "12-B6.pptx",
+          "size_bytes": 8134164,
+          "sha256": "ba0242f74a9e78f6e45cdb3be87f75052cfc528c2de0d6609d06824e2fb1ad58",
+          "slide_count": 23,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "13-C1 C2(a)(b).pptx",
+          "size_bytes": 9173073,
+          "sha256": "627b5536179637aea131925f61b05f75a941edc710b25eb61c5786b464cfbf8f",
+          "slide_count": 31,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "14-C2(c)~(e) C3.pptx",
+          "size_bytes": 9675052,
+          "sha256": "e175446b350e2502c02d51d3854e86a0117ace806ec035b433ab82e3d473e4af",
+          "slide_count": 36,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "15-C4.pptx",
+          "size_bytes": 7200315,
+          "sha256": "6f1646c15e7cdb9379f38ab0dc06ea4ac7f7359e0de5be97a8612d718f7aeca5",
+          "slide_count": 32,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "16-C5 C6.pptx",
+          "size_bytes": 12887746,
+          "sha256": "b51953ef4f5ae7f26eaf942a65ae199ec6b15811385b6e9f7c836e7b59b9a712",
+          "slide_count": 64,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "9-B3(e).pptx",
+          "size_bytes": 12784183,
+          "sha256": "3b5772e7b282ceff2df36edd9cb93c500b270a4c0e658054e92b15ffca723523",
+          "slide_count": 55,
+          "hidden_slide_count": 0
+        }
+      ]
+    },
+    {
+      "filename": "TX-Sdanvi 主课PPT-Ⅲ-66300.zip",
+      "size_bytes": 93133578,
+      "sha256": "dd309df29c4579ae9a43578c8896d0c3d101c21cf1f6854b71cc02ac473dad8e",
+      "pptx_files": [
+        {
+          "filename": "17-A4~A6-individuals.pptx",
+          "size_bytes": 7026979,
+          "sha256": "736a454c953b866e197bc4a642b0ace808b1d783eae42791d10ca751fb6d5acc",
+          "slide_count": 24,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "18-D.pptx",
+          "size_bytes": 15166653,
+          "sha256": "4dc8e8722b7da73b652c6478c2d933fc736b4ba0372c8dca6d25a6453d5c8dfc",
+          "slide_count": 67,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "19-E1 E2(a)~(c) E2(h)~(j).pptx",
+          "size_bytes": 9801576,
+          "sha256": "20fa0d51f5b007f3ee5ae2b3db043ca66c3e6b2c9cc1e0c4898a3bddb8bf4fa9",
+          "slide_count": 55,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "20-E2(d)~(g).pptx",
+          "size_bytes": 8334248,
+          "sha256": "e133f4474b8f1eb99cb7612f7dd58916ab5e609d1688a3246d532709443b725a",
+          "slide_count": 33,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "21-E3.pptx",
+          "size_bytes": 7853619,
+          "sha256": "be263fffeb8d3b257ea67763392ae05b04329282040d48bc6b21cfab94ac8867",
+          "slide_count": 33,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "22-E4.pptx",
+          "size_bytes": 9115601,
+          "sha256": "6a3b3c481722672738ab3625c03d6c80764fb4432e3fb1f1856931cfc4faabc1",
+          "slide_count": 34,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "23-E5.pptx",
+          "size_bytes": 12233031,
+          "sha256": "2bb6c34d2f1ca8732d250883cc534600efb00762b32dad0b7f50296236d153e1",
+          "slide_count": 55,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "24-A4~A6-companies.pptx",
+          "size_bytes": 7247405,
+          "sha256": "aa35c63800a0ec1b6ac8e0f04f362c88af957b20fb4ccfa052ff9617c4aa9f4c",
+          "slide_count": 27,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "25-F.pptx",
+          "size_bytes": 14122558,
+          "sha256": "df2bbd37720366e4da05e2fe223b8802a0059d19d326cd7a07130d1a02054b83",
+          "slide_count": 77,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "26-G.pptx",
+          "size_bytes": 6480776,
+          "sha256": "e339a1dd9fba522d405bfb1c52fddab2a546c98c19e4905f4892d68c18176637",
+          "slide_count": 11,
+          "hidden_slide_count": 0
+        }
+      ]
+    },
+    {
+      "filename": "TX-Sdanvi 主课作业答案-Ⅰ-66301.zip",
+      "size_bytes": 36775549,
+      "sha256": "516dbfd9ed300b4c982f5e6723af9b5c58e568ae4e216cd9575e6b853b4e4cfb",
+      "pptx_files": [
+        {
+          "filename": "答案2 A1-A3.pptx",
+          "size_bytes": 4818648,
+          "sha256": "015d28cf6b85925ea9fd3f88225b8798292ed242c7416ffb75e48414c480abf4",
+          "slide_count": 2,
+          "hidden_slide_count": 1
+        },
+        {
+          "filename": "答案3 B1 B4(f)-(h) B5 .pptx",
+          "size_bytes": 5013713,
+          "sha256": "7d323819f6faa20831d653f069c8d9a64bbfdef0d021c404e1b90d86418b172f",
+          "slide_count": 13,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案4 B2(a)-(e) .pptx",
+          "size_bytes": 4856727,
+          "sha256": "42b7290c2ccf4ff2d1595271c0191e776076915d747263f1b881a84321665669",
+          "slide_count": 5,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案5 B2(f)-(h) .pptx",
+          "size_bytes": 4969341,
+          "sha256": "7f262c65da9c42bf8c36f2f00eac02adda387a67875991a6c34ddd6e42f56194",
+          "slide_count": 10,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案6 B4(a)-(e) .pptx",
+          "size_bytes": 5009610,
+          "sha256": "baf1a06a624d52a8edb4b9040211512038e786b4175dd907761585a08d086e13",
+          "slide_count": 8,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案7 B7 .pptx",
+          "size_bytes": 4991056,
+          "sha256": "4bd052c8d847f796bc6574a4377cc2beeb37cd17b5e13925476ad4eaced2b221",
+          "slide_count": 9,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案8 B3(a)-(d) .pptx",
+          "size_bytes": 4977167,
+          "sha256": "8298401087b7ba7999706ab86492a0618edc02833187b4fee7d479994bb0501a",
+          "slide_count": 6,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案9 B3(e) .pptx",
+          "size_bytes": 4975913,
+          "sha256": "2791f363b524342b891d0639b7716e42a2d5cdcfd1b7ba7e18091c6042632204",
+          "slide_count": 7,
+          "hidden_slide_count": 0
+        }
+      ]
+    },
+    {
+      "filename": "TX-Sdanvi 主课作业答案-Ⅱ-66302.zip",
+      "size_bytes": 57789936,
+      "sha256": "6831b65c47d37df66d73a666e9355b01363fd27b1b92bb38a543d15fd127b00e",
+      "pptx_files": [
+        {
+          "filename": "答案10 B3(f) .pptx",
+          "size_bytes": 5033443,
+          "sha256": "21e898d3b982256e69fbc02cd5dbb8dd6c1094b90e4a4af1af345d05a5197f74",
+          "slide_count": 17,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案11 B3(g) .pptx",
+          "size_bytes": 5126871,
+          "sha256": "eeb15e66135b04068d53be410643d2fef866b719990b6d0bb81bca1db848b0d2",
+          "slide_count": 5,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案12 B6.pptx",
+          "size_bytes": 25270069,
+          "sha256": "2ba1531a39c7cba0f02f3410cde047c5b8d8d3b5b239eb2cc6ff8ed0d5baec18",
+          "slide_count": 4,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案13 C1 C2(a)(b) .pptx",
+          "size_bytes": 4998604,
+          "sha256": "7b9b49a06a7e7c5682dbe5b67616d1fad313e050e6ff7cd4e338ae47856a4e2e",
+          "slide_count": 6,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案14 C2(c)~(e) C3.pptx",
+          "size_bytes": 5078628,
+          "sha256": "ffaf0f360e6f1f30bbd921d24426dfbb44648fef468e7b9fd89271c3d3c22840",
+          "slide_count": 7,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案15 C4.pptx",
+          "size_bytes": 4998353,
+          "sha256": "d60d627697ae196049f39021923c60aed39e73e1226a299f168b5c365665292b",
+          "slide_count": 6,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案16 C5 C6.pptx",
+          "size_bytes": 5132066,
+          "sha256": "27e829b0dd3fea449387ac007763d22d6ee244099ec64bc8eec7483345ecfd2b",
+          "slide_count": 14,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案17 A4~A6-individuals.pptx",
+          "size_bytes": 4980894,
+          "sha256": "39a6a5ef9eb484ee61b5fb4ca9deccf791e93c70a55eb05c9b3c67ba1e87ce0c",
+          "slide_count": 4,
+          "hidden_slide_count": 0
+        }
+      ]
+    },
+    {
+      "filename": "TX-Sdanvi 主课作业答案-Ⅲ-66303.zip",
+      "size_bytes": 37400819,
+      "sha256": "e9e14fb6826cac24bf5cd5a0b359afa212d3ec5c0cfbb268ca8f0214116f5b0c",
+      "pptx_files": [
+        {
+          "filename": "答案18 D.pptx",
+          "size_bytes": 5041156,
+          "sha256": "6dc161461e82847aca3863bd0d7401f450a56c9e67365a2800b6ffda4ecf3ecc",
+          "slide_count": 9,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案19 E1 E2(a)~(c) E2(h)~(j).pptx",
+          "size_bytes": 5027189,
+          "sha256": "bbc9d9d2122c3a5d403407dc020df609d1c5e62a258c79b5aa153d1a5773ac8d",
+          "slide_count": 9,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案20 E2(d)~(g).pptx",
+          "size_bytes": 5106196,
+          "sha256": "6feaa317fc1296852fd7b7cd3299348ca56018332fe2c14551aa8d225ced4e6f",
+          "slide_count": 8,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案21 E3.pptx",
+          "size_bytes": 4978893,
+          "sha256": "cfbb93544ccc443ff80eea1abb20ba5df0c65571dbce3f412597cb5cc63342e1",
+          "slide_count": 8,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案22 E4.pptx",
+          "size_bytes": 4995468,
+          "sha256": "0b0419434651e8726636a66b0aad580d1769d5128ce45a38862c8e16f01930d8",
+          "slide_count": 12,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案23 E5 - A.pptx",
+          "size_bytes": 4982375,
+          "sha256": "27368a95cf81994beccf8d02edac2da00623a505925ed8e5a032e597b350563a",
+          "slide_count": 13,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案24 A4~A6-companies.pptx",
+          "size_bytes": 4979474,
+          "sha256": "6b8edbe5ffefda36721d50acba299bf85859513887fb68f8d36c1f7016174375",
+          "slide_count": 4,
+          "hidden_slide_count": 0
+        },
+        {
+          "filename": "答案25 F.pptx",
+          "size_bytes": 5074219,
+          "sha256": "c280a8114c7320f6454d3653ffe1a4d4597bdc0ea40f99e827d8a30c0cfc3851",
+          "slide_count": 9,
+          "hidden_slide_count": 0
+        }
+      ]
+    }
+  ],
+  "tax_table": {
+    "filename": "01. TX UK 考试提供的税率表 2026.06-2027.03 tax tables.pdf",
+    "sha256": "80d61dbdc42d7f0df1a6c36679033c6a81ff981ee3c91b542ac3c36725ca6f06",
+    "size_bytes": 62721
+  }
+}

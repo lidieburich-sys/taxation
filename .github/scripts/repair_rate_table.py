@@ -18,22 +18,21 @@ SOURCE_SHA256 = "6a3b3c481722672738ab3625c03d6c80764fb4432e3fb1f1856931cfc4faabc
 SLIDE_PART = "ppt/slides/slide6.xml"
 SLIDE_SHA256 = "4da42a28d850d2d83f15791dfe5330cbd46b760c11e4b459a00cb3812ffb934f"
 TARGET_TEXT = "Small profits rate（augmented profits≤lower limit）"
+SOURCE_COLUMN_WIDTHS = [4751705, 1080135, 1047115, 1041400]
+COLUMN_WIDTH_DELTAS = [952500, -317500, -317500, -317500]
 NS = {
     "a": "http://schemas.openxmlformats.org/drawingml/2006/main",
     "p": "http://schemas.openxmlformats.org/presentationml/2006/main",
 }
 
 
-def _a(local_name: str) -> str:
-    return "{" + NS["a"] + "}" + local_name
-
-
 def repair_rate_table(data: bytes, filename: str) -> tuple[bytes, list[dict]]:
-    """Reduce only slide 6's long rate-label cell from 18 pt to 17 pt.
+    """Give slide 6's rate-label column 75 pt from its three numeric columns.
 
     All other filenames pass through unchanged. A matching filename with a
     different source hash fails closed, including previously repaired input.
-    Text, line spacing, table geometry, and every other ZIP member are retained.
+    Only four grid-column widths change. All text, original 18 pt fonts, line
+    spacing, table bounds, row heights, and every other ZIP member are retained.
     """
     if PurePosixPath(filename.replace("\\", "/")).name != SOURCE_FILENAME:
         return data, []
@@ -77,34 +76,25 @@ def repair_rate_table(data: bytes, filename: str) -> tuple[bytes, list[dict]]:
         ):
             raise ValueError("Audited rate cell must have seven explicit 18 pt properties")
 
-        original_cell = deepcopy(cell)
-        for prop in existing_properties:
-            prop.set("sz", "1700")
-        paragraph_properties = paragraph.find("a:pPr", NS)
-        if paragraph_properties is None:
-            paragraph_properties = etree.Element(_a("pPr"))
-            paragraph.insert(0, paragraph_properties)
-        default_properties = paragraph_properties.find("a:defRPr", NS)
-        if default_properties is None:
-            default_properties = etree.Element(_a("defRPr"))
-            extension_list = paragraph_properties.find("a:extLst", NS)
-            if extension_list is None:
-                paragraph_properties.append(default_properties)
-            else:
-                paragraph_properties.insert(
-                    paragraph_properties.index(extension_list), default_properties
-                )
-        default_properties.set("sz", "1700")
+        columns = frames[0].xpath(".//a:tbl/a:tblGrid/a:gridCol", namespaces=NS)
+        old_widths = [int(column.get("w")) for column in columns]
+        if old_widths != SOURCE_COLUMN_WIDTHS:
+            raise ValueError("Audited rate-table grid-column widths changed")
+        new_widths = [width + delta for width, delta in
+                      zip(old_widths, COLUMN_WIDTH_DELTAS)]
+        if min(new_widths) <= 0 or sum(new_widths) != sum(old_widths):
+            raise ValueError("Rate-table repair must preserve total table width")
+        for column, width in zip(columns, new_widths):
+            column.set("w", str(width))
 
-        # Verify the whole slide is unchanged outside the one audited cell.
-        parent = cell.getparent()
-        index = parent.index(cell)
-        parent[index] = original_cell
+        # Restore just the four widths and compare the entire canonical XML.
+        # This rejects any incidental change to text, fonts, spacing or bounds.
+        for column, width in zip(columns, old_widths):
+            column.set("w", str(width))
         if etree.tostring(root, method="c14n") != etree.tostring(before, method="c14n"):
-            raise ValueError("Rate-table repair changed content outside its target cell")
-        parent[index] = cell
-        if "".join(cell.itertext()) != "".join(original_cell.itertext()):
-            raise ValueError("Rate-table repair changed the target cell's text")
+            raise ValueError("Rate-table repair changed content outside its four column widths")
+        for column, width in zip(columns, new_widths):
+            column.set("w", str(width))
 
         repaired_xml = etree.tostring(root, encoding="UTF-8", xml_declaration=True,
                                       standalone=True)
@@ -119,7 +109,7 @@ def repair_rate_table(data: bytes, filename: str) -> tuple[bytes, list[dict]]:
 
     repaired = output.getvalue()
     return repaired, [{
-        "repair": "corporation_rate_label_font_fit",
+        "repair": "corporation_rate_table_column_fit",
         "source": filename,
         "source_sha256": source_hash,
         "source_sha256_verified": True,
@@ -129,12 +119,13 @@ def repair_rate_table(data: bytes, filename: str) -> tuple[bytes, list[dict]]:
         "slide": 6,
         "slide_part": SLIDE_PART,
         "shape_id": 6,
-        "table_row": 2,
-        "table_column": 1,
         "text": TARGET_TEXT,
-        "old_font_pt": 18,
-        "new_font_pt": 17,
-        "updated_existing_font_properties": len(existing_properties),
-        "paragraph_default_font_pt": 17,
-        "text_spacing_and_geometry_preserved": True,
+        "old_column_widths_emu": old_widths,
+        "new_column_widths_emu": new_widths,
+        "column_width_deltas_emu": COLUMN_WIDTH_DELTAS,
+        "column_width_deltas_pt": [75, -25, -25, -25],
+        "updated_grid_width_properties": 4,
+        "total_table_width_emu": sum(new_widths),
+        "original_font_pt": 18,
+        "text_fonts_spacing_bounds_and_row_heights_preserved": True,
     }]
